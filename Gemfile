@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
+gem 'rake'
 
 group :development, :test do 
 	gem 'rspec-rails'
@@ -14,8 +15,11 @@ group :development, :test do
 end
 
 group :development do
-
+  gem "capistrano", "~> 2.15.5"
+  gem 'capistrano-ext'
+  gem 'rvm-capistrano'
 end
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -26,10 +30,8 @@ end
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
-# Use Capistrano for deployment
-gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

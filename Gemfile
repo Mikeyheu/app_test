@@ -14,12 +14,18 @@ group :development, :test do
 	gem 'capybara'
 end
 
-group :development do
-  gem "capistrano", "~> 2.15.5"
-  gem 'capistrano-ext'
-  gem 'rvm-capistrano'
-end
+# group :development do
+#   gem "capistrano", "~> 2.15.5"
+#   gem 'capistrano-ext'
+#   gem 'capistrano-rbenv', '~>1.0.5'
+# end
 
+group :development do
+	gem 'capistrano', '~> 3.1.0',require: false
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

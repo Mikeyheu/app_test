@@ -1,4 +1,5 @@
-set :user, "deployer"
-server "54.215.156.155", :app, :web, :db, :primary => true
-
-set :rails_env,  'production'
+set :stage, :production
+set :branch, 'master'
+set :deploy_to,    "/home/deployer/#{application}"
+server "54.215.156.155", user: 'deployer', roles: %w{web app db}, primary: true
+set :rails_env, :production

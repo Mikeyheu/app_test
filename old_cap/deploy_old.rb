@@ -2,20 +2,20 @@ require 'bundler/capistrano'
 require 'capistrano/ext/multistage'
 
 
-set :rvm_ruby_string, 'ruby-2.1.1@app'
-set :rvm_type, :user
-set :rvm_autolibs_flag, "enable"
-set :rvm_install_with_sudo, true
-set :default_branch, "master"
-set :application, "app_test"
-set :repository,  "git@github.com:Mikeyheu/app_test.git"
-set :scm, :git
+# set :rvm_ruby_string, 'ruby-2.1.1@app'
+# set :rvm_type, :user
+# set :rvm_autolibs_flag, "enable"
+# set :rvm_install_with_sudo, true
+# set :default_branch, "master"
+# set :application, "app_test"
+# set :repository,  "git@github.com:Mikeyheu/app_test.git"
+# set :scm, :git
 set :deploy_to,    "/home/deployer/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :stages, %w(staging production)
 set :default_stage, "staging"
-set :user, "deployer"
+# set :user, "deployer"
 
 # rbenv
 set :default_environment, {

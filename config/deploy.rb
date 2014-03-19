@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'app_test'
-# set :deploy_user, 'deployer'
+set :deploy_user, 'deployer' # not sure about this and using in the default_env
 
 set :scm, :git
 set :repo_url, 'https://github.com/Mikeyheu/app_test.git'
@@ -37,7 +37,7 @@ set :ssh_options, {
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { path: "/home/#{deploy_user}/.rbenv/shims:/home/#{deploy_user}/.rbenv/bin:$PATH" }
 
 namespace :deploy do
 

@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'app_test'
-set :deploy_user, 'deployer'
+# set :deploy_user, 'deployer'
 
 set :scm, :git
 set :repo_url, 'https://github.com/Mikeyheu/app_test.git'
@@ -19,6 +19,10 @@ set :keep_releases, 5
 # Default value for :linked_files is []
 set :linked_files, %w{config/database.yml}
 
+set :ssh_options, {
+  forward_agent: true
+}
+
 
 # Default value for :format is :pretty
 # set :format, :pretty
@@ -34,10 +38,6 @@ set :linked_files, %w{config/database.yml}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-
-
-
 
 namespace :deploy do
 

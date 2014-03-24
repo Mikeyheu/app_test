@@ -12,9 +12,13 @@ namespace :deploy do
       # everything should be in deploy/shared with params which differ
       # set in the stage files
       config_files = fetch(:config_files)
+
+      puts "compiling config files from erb files.\n"
       config_files.each do |file|
         smart_template file
       end
+
+      puts "making some files executable\n"
 
       # which of the above files should be marked as executable
       executable_files = fetch(:executable_config_files)
@@ -22,10 +26,13 @@ namespace :deploy do
         execute :chmod, "+x #{shared_path}/config/#{file}"
       end
 
+
+
       # symlink stuff which should be... symlinked
       symlinks = fetch(:symlinks)
 
       symlinks.each do |symlink|
+        puts "breaks here"
         sudo "ln -nfs #{shared_path}/config/#{symlink[:source]} #{sub_strings(symlink[:link])}"
       end
     end

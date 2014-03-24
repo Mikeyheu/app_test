@@ -1,7 +1,0 @@
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: app_test_production
-  pool: 5
-  # username: app_test
-  # password:

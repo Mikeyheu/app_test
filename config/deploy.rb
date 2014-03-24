@@ -15,7 +15,7 @@ set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rben
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
 # Default value for default_env is {}
-set :default_env, { path: "/home/#{fetch(:deploy_user)}/.rbenv/shims:/home/#{fetch(:deploy_user)}/.rbenv/bin:$PATH" }
+# set :default_env, { path: "/home/#{fetch(:deploy_user)}/.rbenv/shims:/home/#{fetch(:deploy_user)}/.rbenv/bin:$PATH" }
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
@@ -27,12 +27,11 @@ set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 set :ssh_options, { forward_agent: true }
+# set :use_sudo, true
+# set :pty, true
 
 set :tests,[]
 
-# which config files should be copied by deploy:setup_config
-# see documentation in lib/capistrano/tasks/setup_config.cap
-# for details of operations
 set(:config_files, %w(
   nginx.conf
   database.example.yml

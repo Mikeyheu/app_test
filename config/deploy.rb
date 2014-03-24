@@ -27,8 +27,8 @@ set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 set :ssh_options, { forward_agent: true }
-# set :use_sudo, true
-# set :pty, true
+set :use_sudo, false
+set :pty, true
 
 set :tests,[]
 
